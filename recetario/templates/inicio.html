@@ -1,0 +1,21 @@
+<header>
+	<nav>
+		<ul>
+			<li><a href='/'>Inicio</a></li>
+			<li><a href='/usuarios'>Usuarios registrados</a></li>
+			<li><a href='/recetas'>Recetas</a></li>
+			<li><a href='/sobre'>Sobre</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+	<h1>Recetario</h1>
+	<p>Poseemos las siguientes recetas en nuestra web:</p>
+	<ul>
+		{% for dato in recetas %}
+		<li>
+			{{dato.titulo}}
+		</li>
+		{% endfor %}
+	</ul>
+</section>
