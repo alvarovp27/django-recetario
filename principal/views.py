@@ -1,5 +1,5 @@
 # Create your views here.
-from principal.models import Bebida, Receta
+from principal.models import Bebida, Receta, User
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
@@ -14,3 +14,8 @@ def sobre(request):
 def inicio(request):
     recetas = Receta.objects.all()
     return render_to_response('inicio.html', {'recetas': recetas})
+
+def usuarios(request):
+    users = User.objects.all()
+    recetas = Receta.objects.all()
+    return render_to_response('usuarios.html', {'usuarios': users, 'recetas': recetas})
