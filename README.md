@@ -1,11 +1,11 @@
 # django-recetario
-Examples and own notes about Django regarding this tutorial: http://www.maestrosdelweb.com/curso-django-instalacion-y-primera-aplicacion/
+This repository contains examples and own notes about Django regarding this tutorial: http://www.maestrosdelweb.com/curso-django-instalacion-y-primera-aplicacion/
 
 ##Installing Django
-I required to install Django 1.4.7, but I had troubles with it since when I created a Django project, it didn't create the manage.py file, which is necessary for starting the application. Instead, I took the version 1.4.12, and it fixed this problem.
+I was required to install Django 1.4.7, but I had troubles with it, since when I tried to create a Django project, it didn't create the manage.py file, which is necessary for starting the application. Instead, I took the version 1.4.12, and it fixed this problem.
 
 ##Initializing Django project with PyDev
-Once I had PyDev plugin for Eclipse installed, I created a new Django Project by selecting "PyDev Django Project" on new project menu. I just clicked finish. (This step is the same as running "django-admin.py startproject recetario"
+Once I had the PyDev plugin for Eclipse installed, I created a new Django Project by selecting "PyDev Django Project" on new project menu. I just clicked finish. (This step is the same as running "django-admin.py startproject recetario"
  on shell).
 I had to add the path C:\Python27\Scripts on Python Interpreters. It's at Windows->preferences.
 
