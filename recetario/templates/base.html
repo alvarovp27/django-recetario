@@ -1,0 +1,36 @@
+<html>
+	<head lang="es">
+		<meta charset="utf-8">
+		<title>Recetario para MDW - {% block titulo %}{% endblock %}</title>
+		<link rel = 'stylesheet' href='{{STATIC_URL}}css/base.css'>
+		<link rel = 'shortcut icon' href='{{STATIC_URL}}img/icono.png'>
+		<style>
+		{% block style_css %}{% endblock %}
+		</style>
+		<script src='{{STATIC_URL}}js/jquery-3.1.1.min.js'></script>
+		<script src='{{STATIC_URL}}js/demo.js'></script>
+	</head>
+	<body>
+		<header>
+			{% block encabezado %}{% endblock %}
+			<nav>
+				<ul>
+					<li><a href='/'>Inicio</a></li>
+					<li><a href='/usuarios'>Usuarios registrados</a></li>
+					<li><a href='/recetas'>Recetas</a></li>
+					<li><a href='/sobre'>Sobre</a></li>
+					<li><a href='/contacto'>Contacto</a></li>
+					<li><a href='/ingresar'>Ingresar</a></li>
+					<li><a href='/cerrar'>Cerrar sesion</a></li>
+				</ul>
+			</nav>
+			<hr>
+		</header>
+		<section class="contenido">
+			{% block contenido %}{% endblock %}
+		</section>
+		<footer>
+			<p>Proyecto de ejemplo para el curso Django de Maestros del Web &copy;2012</p>
+		</footer>
+	</body>
+</html>
