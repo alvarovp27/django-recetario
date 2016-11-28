@@ -1,6 +1,7 @@
 #encoding:utf-8
 # Django settings for recetario project.
 import os
+from django.conf.global_settings import EMAIL_USE_TLS, EMAIL_PORT
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -171,3 +172,11 @@ LOGGING = {
         },
     }
 }
+
+
+#configuraciones para enviar mensajes usando GMAIL
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'remitente@gmail.com'
+EMAIL_HOST_PASSWORD = 'clavedelcorreo'
+EMAIL_PORT = 587
