@@ -21,6 +21,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'principal.views.inicio'),
+    url(r'^contacto/$', 'principal.views.contacto'),
+    url(r'^receta/nueva/$','principal.views.nueva_receta'),
+    url(r'^comenta/$','principal.views.nuevo_comentario'),
     url(r'^usuarios/$', 'principal.views.usuarios'),
     url(r'^recetas/$', 'principal.views.lista_recetas'),
     url(r'^receta/(?P<id_receta>\d+)$', 'principal.views.detalle_receta'),
