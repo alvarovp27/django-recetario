@@ -1,29 +1,27 @@
-<header>
-	<nav>
-		<ul>
-			<li><a href='/'>Inicio</a></li>
-			<li><a href='/usuarios'>Usuarios registrados</a></li>
-			<li><a href='/recetas'>Recetas</a></li>
-			<li><a href='/sobre'>Sobre</a></li>
-		</ul>
-	</nav>
-</header>
-<section>
-	<h1>Colaboradores</h1>
+{% extends 'base.html' %}
+{%block titulo %} Usuarios registrados {% endblock %}
+
+{% block encabezado %}
+	<h1>Colaboradores </h1>
+{% endblock %}
+
+{% block contenido %}
 	<ul>
 		{% for dato in usuarios %}
 		<li>
-			{{dato.username}} - <em>{{dato.email}}</em>
+			{{dato.username|capfirst}} - <em>{{dato.email}}</em>
 			<ul>
 				{% for receta in recetas %}
-				{% if receta.usuario.username == dato.username %}
-				<li>
-					{{receta}}
-				</li>
-				{% endif %}
+					{% if receta.usuario.username == dato.username %}
+						<li>{{receta}}</li>
+					{% endif %}
+				{% empty %}
+					<li>Este usuario aun no ha registrado recetas</li>
 				{% endfor %}
 			</ul>
 		</li>
+		{% empty %}
+		<li>No hay usuarios registrados, aun</li>
 		{% endfor %}
 	</ul>
-</section>
+{% endblock %}

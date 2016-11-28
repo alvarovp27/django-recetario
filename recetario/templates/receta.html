@@ -16,9 +16,20 @@
 	</div>
 	<div id="preparacion">
 		<h2>Preparacion</h2>
-		<p>{{receta.ingredientes}}</p>
+		<p>{{receta.preparacion}}</p>
 	</div>
 	<div id="imagen">
 		<img src='/media/{{receta.imagen}}'/>
 	</div>
+	<div id="comentarios">
+		<h2>Comentarios</h2>
+		{% for item in comentarios %}
+			<p>{{item.texto}}</p>
+			{%empty%}
+			<p>Sin comentario registrados</p>
+		{%endfor%}
+	</div>
 </section>
+<footer>
+	<p>Registrado {{receta.tiempo_registro}} por  {{receta.usuario}}</p>
+</footer>

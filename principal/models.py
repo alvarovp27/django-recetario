@@ -20,3 +20,11 @@ class Receta(models.Model):
     
     def __unicode__(self):
         return self.titulo
+    
+class Comentario(models.Model):
+    receta = models.ForeignKey(Receta)
+    texto = models.TextField(help_text="Tu comentario", verbose_name="Comentario")
+    
+    def __unicode__(self):
+        return self.texto
+    

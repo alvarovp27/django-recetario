@@ -1,6 +1,6 @@
 #encoding:utf-8
 # Create your views here.
-from principal.models import Bebida, Receta, User
+from principal.models import Bebida, Receta, User, Comentario
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext
@@ -32,4 +32,5 @@ def lista_recetas(request):
 
 def detalle_receta(request, id_receta):
     dato = get_object_or_404(Receta, pk=id_receta)
-    return render_to_response('receta.html', {'receta': dato})
+    comentarios = Comentario.objects.filter(receta=dato)
+    return render_to_response('receta.html', {'receta': dato, 'comentarios': comentarios})
